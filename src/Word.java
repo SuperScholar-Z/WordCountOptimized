@@ -25,7 +25,7 @@ public class Word
     }
 
     @Override
-    public boolean equals(Object obj)   //重写equals方法，用strWord的值来判断类相同
+    public boolean equals(Object obj)   //重写equals方法，用strWord的值来判断Word类相同
     {
         if (obj instanceof Word)
             return this.getStrWord().equals(((Word) obj).getStrWord());
