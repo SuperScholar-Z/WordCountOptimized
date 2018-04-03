@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.StringTokenizer;
 
 //单词统计核心功能
@@ -36,7 +35,7 @@ public class WordCount
                     wordArr.get(indexOfWord).incNum();
             }
         }
-        Collections.sort(wordArr, new SortByNum());
+        SortWord.sort(wordArr); //排序
 
         ResultOutput(); //输出结果
     }
