@@ -15,7 +15,7 @@ public class SortWord
                 if(word1.getNum() < word2.getNum())
                     return 1;
                 else if(word1.getNum() == word2.getNum())
-                    return 0;
+                    return word1.getStrWord().compareTo(word2.getStrWord());
                 else
                     return -1;
             }

@@ -23,12 +23,14 @@ public class WordCount
         String line;   //读取的一行文本
         while ((line = input.readLine()) != null)
         {
-            StringTokenizer wordST = new StringTokenizer(line,"~`!#%^&*_()[]+=-:;\"\'|<>,./? \t0123456789{}");   //单词分割
+            StringTokenizer wordST = new StringTokenizer(line,"~`!#%^&*_()[]+=:;\"\'|<>,./? \t0123456789{}\\");   //单词分割
             while(wordST.hasMoreTokens())   //提取出分割的单词
             {
-                Word m_word = new Word(wordST.nextToken());  //逐个单词读入
+                Word m_word = new Word( CutConnector( wordST.nextToken().toLowerCase() ) );  //逐个单词读入(全部转化为小写，并去掉首尾的'-')
                 int indexOfWord = wordArr.indexOf(m_word);    //单词在容器中的位置
 
+                if(m_word.getStrWord().length() == 0)   //跳过空字符串
+                    continue;
                 if(indexOfWord == -1)   //单词第一次出现则放进容器
                     wordArr.add(m_word);
                 else    //单词重复出现则计数器+1
@@ -38,6 +40,23 @@ public class WordCount
         SortWord.sort(wordArr); //排序
 
         ResultOutput(); //输出结果
+    }
+
+    private String CutConnector(String originWord) //去掉字符串首尾的'-'
+    {
+        int length = originWord.length();   //字符串长度
+        int begin = 0;  //字符串首部
+        int end = length - 1;  //字符串末尾
+
+        while(begin < length && originWord.charAt(begin) == '-')  //去掉首部的'-'
+            begin++;
+        while(end >= 0 && originWord.charAt(end) == '-')    //去掉末尾的'-'
+            end--;
+
+        if(begin > end)
+            return "";
+        else
+            return originWord.substring(begin, end + 1);
     }
 
     private void ResultOutput() throws IOException  //输出结果，关闭文件
