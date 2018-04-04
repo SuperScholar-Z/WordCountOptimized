@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 //将排序功能封装起来
-public class SortWord
+public class WordSort
 {
     public static void sort(ArrayList<Word> wordArr)  //对单词按出现次数降序排序
     {
