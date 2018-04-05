@@ -17,13 +17,21 @@ public class Main
             return "";
     }
 
-    private static void ResultOutput(ArrayList<Word> wordArr) throws IOException    //输出统计结果
+    private static void resultOutput(ArrayList<Word> wordArr) throws IOException    //输出统计结果
     {
         File outputFile = new File("result.txt"); //打开存储文件
+        //PrintWriter output = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile),"UTF-8")));   //输出缓冲区
         BufferedWriter output = new BufferedWriter(new FileWriter(outputFile)); //输出缓冲区
 
+        int rank = 0;   //单词次数排名
         for(Word word : wordArr)    //将统计结果写入缓冲区
+        {
             output.write(word.getStrWord() + "\t" + word.getNum() + "\r\n");
+
+            rank++;
+            if(rank > 100)  //只输出前100个
+                break;
+        }
 
         output.flush(); //把缓存区内容写入磁盘文件中
         output.close(); //关闭文件
@@ -35,7 +43,7 @@ public class Main
         int errorType = -1;
 
         //读取命令行输入
-        if(args == null || args.length == 0)
+        if(args == null || args.length != 1)
             errorType = 0;
         else if(args[0].equals("-x")) //使用窗口界面获得文件路径
         {
@@ -55,7 +63,7 @@ public class Main
             WordCount m_WordCount = new WordCount(filePath);    //打开文件
             m_WordCount.Count();    //统计
 
-            ResultOutput(m_WordCount.getWordArr()); //输出结果
+            resultOutput(m_WordCount.getWordArr()); //输出结果
         }
     }
 }
