@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Main
+public class WordIO
 {
     private static String getFilePathInDialog() //通过窗口界面打开文件
     {
@@ -29,7 +29,7 @@ public class Main
             output.write(word.getStrWord() + "\t" + word.getNum() + "\r\n");
 
             rank++;
-            if(rank > 100)  //只输出前100个
+            if(rank >= 100)  //只输出前100个
                 break;
         }
 

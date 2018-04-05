@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-public class MainTest   //测试
+public class WordIOTest   //测试
 {
     private Method getFilePathInDialog = null;
     private Method resultOutPut = null;
@@ -15,10 +15,10 @@ public class MainTest   //测试
     @Before
     public void setUp() throws NoSuchMethodException //设置私有方法可见
     {
-        getFilePathInDialog = Main.class.getDeclaredMethod("getFilePathInDialog");
+        getFilePathInDialog = WordIO.class.getDeclaredMethod("getFilePathInDialog");
         getFilePathInDialog.setAccessible(true);
 
-        resultOutPut = Main.class.getDeclaredMethod("resultOutput", ArrayList.class);
+        resultOutPut = WordIO.class.getDeclaredMethod("resultOutput", ArrayList.class);
         resultOutPut.setAccessible(true);
     }
 
@@ -32,7 +32,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -48,7 +48,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -64,7 +64,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -80,7 +80,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -96,7 +96,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -109,7 +109,7 @@ public class MainTest   //测试
         String errorMessage = "";
         try
         {
-            Main.main(args);
+            WordIO.main(args);
         }
         catch (IOException e)
         {
@@ -121,7 +121,7 @@ public class MainTest   //测试
     @Test
     public void testGetFilePathInDialog7() throws InvocationTargetException, IllegalAccessException   //正常打开文件
     {
-        String filePath = (String)getFilePathInDialog.invoke(new Main());
+        String filePath = (String)getFilePathInDialog.invoke(new WordIO());
         String rootPath = System.getProperty("user.dir");   //项目根路径
 
         assertEquals(rootPath + "\\test\\whiteInput.txt", filePath);
@@ -129,7 +129,7 @@ public class MainTest   //测试
     @Test
     public void testGetFilePathInDialog8() throws InvocationTargetException, IllegalAccessException   //未打开文件
     {
-        String filePath = (String)getFilePathInDialog.invoke(new Main());
+        String filePath = (String)getFilePathInDialog.invoke(new WordIO());
 
         assertEquals("", filePath);
     }
@@ -141,7 +141,7 @@ public class MainTest   //测试
         ArrayList<String> outputString = new ArrayList<>();
 
         inputString.add(new Word("test"));
-        resultOutPut.invoke(new Main(), inputString);
+        resultOutPut.invoke(new WordIO(), inputString);
 
         BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream("result.txt"), "utf-8"));
         String line;
@@ -163,7 +163,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -179,7 +179,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -192,7 +192,7 @@ public class MainTest   //测试
         String errorMessage = "";
         try
         {
-            Main.main(args);
+            WordIO.main(args);
         }
         catch (IOException e)
         {
@@ -211,7 +211,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -224,7 +224,7 @@ public class MainTest   //测试
         String errorMessage = "";
         try
         {
-            Main.main(args);
+            WordIO.main(args);
         }
         catch (IOException e)
         {
@@ -243,7 +243,7 @@ public class MainTest   //测试
         PrintStream cacheStream = new PrintStream(baoStream);
         PrintStream oldStream = System.out;
         System.setOut(cacheStream);
-        Main.main(args);    //测试程序
+        WordIO.main(args);    //测试程序
         String message = baoStream.toString();
         System.setOut(oldStream);
 
@@ -256,7 +256,7 @@ public class MainTest   //测试
         String errorMessage = "";
         try
         {
-            Main.main(args);
+            WordIO.main(args);
         }
         catch (IOException e)
         {
@@ -268,7 +268,7 @@ public class MainTest   //测试
     @Test
     public void testGetFilePathInDialog17() throws InvocationTargetException, IllegalAccessException   //打开文件
     {
-        String filePath = (String)getFilePathInDialog.invoke(new Main());
+        String filePath = (String)getFilePathInDialog.invoke(new WordIO());
         String rootPath = System.getProperty("user.dir");   //项目根路径
 
         assertEquals(rootPath + "\\test\\blackInput.txt", filePath);
@@ -276,7 +276,7 @@ public class MainTest   //测试
     @Test
     public void testGetFilePathInDialog18() throws InvocationTargetException, IllegalAccessException   //不打开文件
     {
-        String filePath = (String)getFilePathInDialog.invoke(new Main());
+        String filePath = (String)getFilePathInDialog.invoke(new WordIO());
 
         assertEquals("", filePath);
     }
@@ -287,7 +287,7 @@ public class MainTest   //测试
         String errorMessage = "";
         try
         {
-            filePath = (String)getFilePathInDialog.invoke(new Main());
+            filePath = (String)getFilePathInDialog.invoke(new WordIO());
         }
         catch(Exception e)
         {
@@ -304,7 +304,7 @@ public class MainTest   //测试
         ArrayList<String> outputString = new ArrayList<>();
 
         inputString.add(new Word("test"));
-        resultOutPut.invoke(new Main(), inputString);
+        resultOutPut.invoke(new WordIO(), inputString);
 
         BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream("result.txt"), "utf-8"));
         String line;
@@ -326,7 +326,7 @@ public class MainTest   //测试
         inputString.add(new Word("test1"));
         inputString.add(new Word("test2"));
         inputString.add(new Word("test3"));
-        resultOutPut.invoke(new Main(), inputString);
+        resultOutPut.invoke(new WordIO(), inputString);
 
         BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream("result.txt"), "utf-8"));
         String line;
@@ -347,7 +347,7 @@ public class MainTest   //测试
         ArrayList<String> expectString = new ArrayList<>();
         ArrayList<String> outputString = new ArrayList<>();
 
-        resultOutPut.invoke(new Main(), inputString);
+        resultOutPut.invoke(new WordIO(), inputString);
 
         BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream("result.txt"), "utf-8"));
         String line;

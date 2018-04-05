@@ -1,0 +1,84 @@
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+#include <conio.h>
+#define SIZE 100 
+
+char Char;
+char Receive[100]={"i:=I+56+3*(gh+89)"};
+char token[100];
+int num;
+int flag = 0;
+char server[5][10]=
+{
+	"BEGIN",
+	"END",
+	"IF",
+	"THEN",
+	"ELSE"
+};
+enum symbol
+{
+	BEGINSY=1,
+	ENDSY=2,
+	IFSY=3,
+	THENSY=4,
+	ELSE=5,
+	IDSY=20,
+	INTSY=21,
+	PLUSSY=22,
+	MINUSSY=23,
+	STARSY=24,
+	DIVISY=25,
+	LPARSY=26,
+	RPARSY=27,
+	COMMASY=28,
+	SEMISY=29,
+	COLONSY=30,
+	ASSIGNSY=31,
+	EQUSY=32
+}Symbol;
+int r=0,t=0;
+
+void Getchar() 
+{
+	Char = Receive[r];
+	r++;
+}
+
+void clearToken()
+{
+	memset(token,0,sizeof(token));
+	t = 0;
+}
+
+bool isSpace()
+{
+	if(Char == ' ')
+	return true;
+	else
+	return false;
+}
+
+bool isNewline()
+{
+	if(Char == '\n')
+	return true;
+	else
+	return false;
+}
+						
+bool isTab()
+{
+	if(Char == '\t')
+	return true;
+	else
+	return false;
+}
+bool isLetter()
+{
+	if(Char>='a'&&Char<='z'||Char>='A'&&Char<='Z')
+	return true;
+	else
+
+ 

@@ -9,6 +9,12 @@ public class Word
         this.strWord = strWord;
     }
 
+    public Word(String strWord, int num)
+    {
+        this.strWord = strWord;
+        this.num = num;
+    }
+
     public String getStrWord()  //获取单词字符串
     {
         return strWord;
