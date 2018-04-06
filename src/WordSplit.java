@@ -19,19 +19,27 @@ public class WordSplit
                     if(Line[p] == '-')
                     {
                         if(p+1==line.length())//如果'-'是最后一个字符，跳出循环
+                        {
                             break;
+                        }
                         if(!((Line[p+1]>= 'a'&&Line[p+1]<='z')||(Line[p+1]>= 'A'&&Line[p+1]<='Z')))//如果'-'后面不是字母，跳出循环
+                        {
                             break;
+                        }
                     }
                     p++;
                     if(p==line.length())
+                    {
                         break;
+                    }
                 }
                 temp = line.substring(a,p);//截取这个单词
                 wordST.add(temp.toLowerCase());
             }
             else
+            {
                 p++;
+            }
         }
     }
 }

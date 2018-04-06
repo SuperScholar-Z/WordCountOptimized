@@ -34,8 +34,12 @@ public class Word
     public boolean equals(Object obj)   //重写equals方法，用strWord的值来判断Word类相同
     {
         if (obj instanceof Word)
+        {
             return this.getStrWord().equals(((Word) obj).getStrWord());
+        }
         else
+        {
             return false;
+        }
     }
 }

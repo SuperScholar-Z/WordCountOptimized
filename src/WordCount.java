@@ -27,7 +27,9 @@ public class WordCount
             ArrayList<String> wordST = new ArrayList<>();
             WordSplit.split(line, wordST);    //单词分割
             if(wordST == null)
+            {
                 continue;
+            }
 
             for(String m_strWord : wordST) //提取出分割的单词
             {
@@ -35,11 +37,17 @@ public class WordCount
                 int indexOfWord = wordArr.indexOf(m_word);    //单词在容器中的位置
 
                 if (m_word.getStrWord().length() == 0)   //跳过空字符串
+                {
                     continue;
+                }
                 if (indexOfWord == -1)   //单词第一次出现则放进容器
+                {
                     wordArr.add(m_word);
+                }
                 else    //单词重复出现则计数器+1
+                {
                     wordArr.get(indexOfWord).incNum();
+                }
             }
         }
         WordSort.sort(wordArr); //排序

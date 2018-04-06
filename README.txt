@@ -12,6 +12,7 @@
 	钟芳郅：
 	    src文件夹：WordIO.java
 	    test文件夹：WordIOTest.java whiteInput.txt blackInput.txt
+	    根文件夹：README.txt
 	刘弋：
 	    src文件夹：Word.java WordSort.java
 	    test文件夹：TestRunner.java WordSortTest.java
