@@ -11,7 +11,8 @@
 文件作者：
 	钟芳郅：
 	    src文件夹：WordIO.java
-	    test文件夹：WordIOTest.java whiteInput.txt blackInput.txt
+	    test文件夹：WordIOTest.java StressTest.java
+			whiteInput.txt blackInput.txt stressInput.txt
 	    根文件夹：README.txt
 	刘弋：
 	    src文件夹：Word.java WordSort.java
