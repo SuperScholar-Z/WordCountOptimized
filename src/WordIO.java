@@ -29,7 +29,7 @@ public class WordIO
         int rank = 0;   //单词次数排名
         for(Word word : wordArr)    //将统计结果写入缓冲区
         {
-            output.write(word.getStrWord() + "\t" + word.getNum() + "\r\n");
+            output.write(word.getStrWord() + " " + word.getNum() + "\r\n");
 
             rank++;
             if(rank >= 100)  //只输出前100个

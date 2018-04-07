@@ -149,7 +149,7 @@ public class WordIOTest   //测试
         {
             outputString.add(line);
         }
-        expectString.add("test\t1");
+        expectString.add("test 1");
 
         assertEquals(expectString, outputString);
     }
@@ -312,7 +312,7 @@ public class WordIOTest   //测试
         {
             outputString.add(line);
         }
-        expectString.add("test\t1");
+        expectString.add("test 1");
 
         assertEquals(expectString, outputString);
     }
@@ -334,9 +334,9 @@ public class WordIOTest   //测试
         {
             outputString.add(line);
         }
-        expectString.add("test1\t1");
-        expectString.add("test2\t1");
-        expectString.add("test3\t1");
+        expectString.add("test1 1");
+        expectString.add("test2 1");
+        expectString.add("test3 1");
 
         assertEquals(expectString, outputString);
     }
