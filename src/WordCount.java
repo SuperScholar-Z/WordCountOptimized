@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 
 //单词统计核心功能
 public class WordCount
@@ -21,6 +21,7 @@ public class WordCount
     public void Count() throws IOException //统计单词数
     {
         String line;   //读取的一行文本
+        HashMap<String, Word> wordMap = new HashMap<>();    //用HashMap容器暂存单词集
         while ((line = input.readLine()) != null)
         {
             //单词分割
@@ -33,22 +34,26 @@ public class WordCount
 
             for(String m_strWord : wordST) //提取出分割的单词
             {
-                Word m_word = new Word(m_strWord);  //逐个单词读入
-                int indexOfWord = wordArr.indexOf(m_word);    //单词在容器中的位置
+                Word m_word = wordMap.get(m_strWord);
 
-                if (m_word.getStrWord().length() == 0)   //跳过空字符串
+                if (m_strWord.length() == 0)   //跳过空字符串
                 {
                     continue;
                 }
-                if (indexOfWord == -1)   //单词第一次出现则放进容器
+                if (m_word == null)   //单词第一次出现则放进容器
                 {
-                    wordArr.add(m_word);
+                    wordMap.put(m_strWord, new Word(m_strWord));
                 }
                 else    //单词重复出现则计数器+1
                 {
-                    wordArr.get(indexOfWord).incNum();
+                    m_word.incNum();
                 }
             }
+        }
+
+        for(Word m_strWord : wordMap.values())  //转换成顺序容器以便排序
+        {
+            wordArr.add(m_strWord);
         }
         WordSort.sort(wordArr); //排序
     }
