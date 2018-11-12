@@ -1,36 +1,36 @@
-ÏîÄ¿»·¾³£º
-	Ê¹ÓÃIdea2016½¨Á¢¹¤³Ì
-	Window10 64Î»ÏµÍ³
-	jdk°æ±¾ 1.8.0_152 64bit
+é¡¹ç›®ç¯å¢ƒï¼š
+	ä½¿ç”¨Idea2016å»ºç«‹å·¥ç¨‹
+	Window10 64ä½ç³»ç»Ÿ
+	jdkç‰ˆæœ¬ 1.8.0_152 64bit
 
-ÏîÄ¿·Ö¹¤£º
-	ÖÓ·¼Û¤£ºÊäÈëÊä³öÄ£¿é
-	Áõß®£ºµ¥´ÊÅÅĞòÄ£¿é
-	»ÆÒ»Í©£ºµ¥´Ê·Ö¸îÄ£¿é
-	ºúÌì³Ø£ºµ¥´Ê¼ÆÊıÄ£¿é
-ÎÄ¼ş×÷Õß£º
-	ÖÓ·¼Û¤£º
-	    srcÎÄ¼ş¼Ğ£ºWordIO.java
-	    testÎÄ¼ş¼Ğ£ºWordIOTest.java StressTest.java
+é¡¹ç›®åˆ†å·¥ï¼š
+	zï¼šè¾“å…¥è¾“å‡ºæ¨¡å—
+	lï¼šå•è¯æ’åºæ¨¡å—
+	hï¼šå•è¯åˆ†å‰²æ¨¡å—
+	htï¼šå•è¯è®¡æ•°æ¨¡å—
+æ–‡ä»¶ä½œè€…ï¼š
+	zï¼š
+	    srcæ–‡ä»¶å¤¹ï¼šWordIO.java
+	    testæ–‡ä»¶å¤¹ï¼šWordIOTest.java StressTest.java
 			whiteInput.txt blackInput.txt stressInput.txt
-	    ¸ùÎÄ¼ş¼Ğ£ºREADME.txt
-	Áõß®£º
-	    srcÎÄ¼ş¼Ğ£ºWord.java WordSort.java
-	    testÎÄ¼ş¼Ğ£ºTestRunner.java WordSortTest.java
+	    æ ¹æ–‡ä»¶å¤¹ï¼šREADME.txt
+	lï¼š
+	    srcæ–‡ä»¶å¤¹ï¼šWord.java WordSort.java
+	    testæ–‡ä»¶å¤¹ï¼šTestRunner.java WordSortTest.java
 			test-1.txt test-2.txt test-3.txt test-4.txt test-5.txt
 			test-6.txt test-7.txt test-8.txt test-9.txt test-10.txt
 			test-11.txt test-12.txt test-13.txt test-14.txt test-15.txt
 			test-16.txt test-17.txt test-18.txt test-19.txt test-20.txt
-	»ÆÒ»Í©£º
-	    srcÎÄ¼ş¼Ğ£ºWordSplit.java
-	    testÎÄ¼ş¼Ğ£ºWordSplitTest.java
+	hï¼š
+	    srcæ–‡ä»¶å¤¹ï¼šWordSplit.java
+	    testæ–‡ä»¶å¤¹ï¼šWordSplitTest.java
 			testsplit1.txt testsplit2.txt testsplit3.txt testsplit4.txt testsplit5.txt
 			testsplit6.txt testsplit7.txt testsplit8.txt testsplit9.txt testsplit10.txt
 			testsplit11.txt testsplit12.txt testsplit13.txt testsplit14.txt testsplit15.txt
 			testsplit16.txt testsplit17.txt testsplit18.txt testsplit19.txt testsplit20.txt
-	ºúÌì³Ø£º
-	    srcÎÄ¼ş¼Ğ£ºWordCount.java
-	    testÎÄ¼ş¼Ğ£ºWordCountTest.java
+	htï¼š
+	    srcæ–‡ä»¶å¤¹ï¼šWordCount.java
+	    testæ–‡ä»¶å¤¹ï¼šWordCountTest.java
 			test1.txt test2.txt test3.txt test4.txt test5.txt
 			test6.txt test7.txt test8.txt test9.txt test10.txt
 			test11.txt test12.txt test13.txt test14.txt test15.txt
